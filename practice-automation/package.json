@@ -1,0 +1,33 @@
+{
+  "name": "practice-automation",
+  "version": "1.0.0",
+  "description": "Production-ready Playwright + TypeScript automation framework",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "npm run typecheck && npm run test:list",
+    "typecheck": "tsc --noEmit",
+    "test": "playwright test",
+    "test:list": "playwright test --list --pass-with-no-tests",
+    "test:ui": "playwright test --grep @ui",
+    "test:api": "playwright test --grep @api",
+    "test:smoke": "playwright test --grep @smoke",
+    "report:open": "allure open allure-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.0",
+    "@types/node": "24.3.0",
+    "allure-js-commons": "3.3.0",
+    "allure-playwright": "3.3.0",
+    "typescript": "5.9.2"
+  },
+  "keywords": [
+    "playwright",
+    "typescript",
+    "automation",
+    "qa",
+    "testing"
+  ],
+  "author": "Kirill Polenok",
+  "license": "MIT"
+}

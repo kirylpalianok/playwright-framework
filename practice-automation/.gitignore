@@ -1,0 +1,18 @@
+node_modules/
+
+# Environment and authentication state
+.env
+.env.*
+!.env.example
+storage-state/
+
+# Test evidence and reports
+test-results/
+playwright-report/
+blob-report/
+allure-results/
+allure-report/
+
+# Tooling caches
+.cache/
+*.tsbuildinfo
