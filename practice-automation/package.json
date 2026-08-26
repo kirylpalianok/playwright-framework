@@ -15,7 +15,7 @@
     "report:open": "allure open allure-report"
   },
   "devDependencies": {
-    "@playwright/test": "1.62.0",
+    "@playwright/test": "1.61.1",
     "@types/node": "24.3.0",
     "allure-js-commons": "3.3.0",
     "allure-playwright": "3.3.0",
