@@ -9,7 +9,7 @@ Accepted
 Story 1 (`docs/project-backlog.md`) establishes the framework's first runnable slice: a
 validated configuration boundary, one UI smoke test, one API smoke test, and an
 automated pull-request check. Two decisions in that slice are durable and change how
-every later story configures the environment and CI, so AGENTS.md section 4 requires
+every later story configures the environment and CI, so CLAUDE.md section 4 requires
 recording them here before or with the change:
 
 1. How the framework selects and validates its target environment (`docs/architecture.md`
@@ -74,12 +74,12 @@ recording them here before or with the change:
 
 - **Zod or another schema library for `environment.ts`.** Rejected for this story: the
   schema is two scalar shapes (one URL, four positive integers), a hand-written validator
-  is small and dependency-free, and AGENTS.md section 12 disfavors adding a package to
+  is small and dependency-free, and CLAUDE.md section 12 disfavors adding a package to
   avoid a small local implementation. Revisit if the configuration surface grows
   materially.
 - **Running the full browser matrix (Chromium/Firefox/WebKit) on every pull request.**
   Rejected: this triples smoke-suite runtime and external-target load for a public
-  third-party site on every PR, for coverage AGENTS.md 12 assigns to scheduled/manual
+  third-party site on every PR, for coverage CLAUDE.md 12 assigns to scheduled/manual
   runs. Story 17 owns the browser-matrix-vs-capacity decision.
 - **SHA-pinning the GitHub Actions used.** Preferred long-term, but deferred until the
   pins can be verified against the real upstream releases (see decision above).
@@ -92,7 +92,7 @@ recording them here before or with the change:
 - The pull-request gate stays fast and credential-free; broader coverage (regression
   suite, full browser matrix, scheduled runs) is deliberately deferred to Story 17.
 - Adding a destructive or authenticated capability later requires revisiting this ADR's
-  "no secrets yet" premise together with AGENTS.md section 6 (environment allowlist,
+  "no secrets yet" premise together with CLAUDE.md section 6 (environment allowlist,
   confirmation setting, idempotency, owner).
 
 ## Migration / rollback

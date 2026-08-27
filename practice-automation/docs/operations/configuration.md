@@ -1,7 +1,7 @@
 # Configuration reference
 
 `src/core/config/environment.ts` is the single startup module allowed to read
-`process.env` (AGENTS.md section 6). It is loaded once, from `playwright.config.ts`,
+`process.env` (CLAUDE.md section 6). It is loaded once, from `playwright.config.ts`,
 before any test runs, and every setting is optional: unset values fall back to a safe
 default for the public practice target, so the framework runs with no `.env` file. A
 malformed value throws before test execution starts, naming the invalid setting.
@@ -15,7 +15,7 @@ malformed value throws before test execution starts, naming the invalid setting.
 | `TEST_TIMEOUT_MS` | Central per-test timeout class (including hooks), in milliseconds. | No | `30000` | `30000` | Not sensitive | All |
 
 Raising a timeout requires an exception record proving a legitimately slower contract
-(AGENTS.md section 10); do not raise these to mask flakiness.
+(CLAUDE.md section 10); do not raise these to mask flakiness.
 
 No credential, token, or environment-specific secret is configured today: the target is
 a public, read-only practice site. When a future story introduces one, add it to this
