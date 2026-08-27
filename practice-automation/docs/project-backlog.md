@@ -1,6 +1,6 @@
 # Project Backlog
 
-This backlog is the ordered implementation plan for the boundaries described in [architecture.md](architecture.md) and the repository-wide standard in [AGENTS.md](../AGENTS.md). Complete stories in epic order and honor each story's stated dependencies; do not start a later epic's stories before its dependencies are done.
+This backlog is the ordered implementation plan for the boundaries described in [architecture.md](architecture.md) and the repository-wide standard in [CLAUDE.md](../CLAUDE.md). Complete stories in epic order and honor each story's stated dependencies; do not start a later epic's stories before its dependencies are done.
 
 Tagging convention: unless a story states otherwise, every UI specification carries `@ui @regression` and every API specification carries `@api @regression`. `@smoke` is reserved for the narrow slice proven in Story 1. A story that needs a different or additional tag states so explicitly, as Stories 1 and 3 do.
 

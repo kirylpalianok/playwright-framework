@@ -2,7 +2,7 @@
 
 This document explains how contributors should extend the Playwright framework. It describes the intent of the current scaffold and the boundaries that future implementation should preserve.
 
-The repository-wide engineering standard is normative and remains in [AGENTS.md](../AGENTS.md). This guide is a practical map of the architecture; it does not replace the standard. The ordered implementation plan is maintained in [project-backlog.md](project-backlog.md), and setup commands remain in [README.md](../README.md).
+The repository-wide engineering standard is normative and remains in [CLAUDE.md](../CLAUDE.md). This guide is a practical map of the architecture; it does not replace the standard. The ordered implementation plan is maintained in [project-backlog.md](project-backlog.md), and setup commands remain in [README.md](../README.md).
 
 ## Architectural principles
 

@@ -16,7 +16,7 @@ export interface SuiteMetadata {
 /**
  * Applies the framework's initial Allure suite hierarchy (epic, parent/sub suite,
  * feature, story, severity) to the currently running test. Kept as one shared module so
- * every specification reports under a consistent taxonomy (AGENTS.md section 11).
+ * every specification reports under a consistent taxonomy (CLAUDE.md section 11).
  */
 export async function applySuiteMetadata(metadata: SuiteMetadata): Promise<void> {
   await epic(EPIC_NAME);

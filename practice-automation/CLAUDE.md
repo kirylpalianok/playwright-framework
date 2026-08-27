@@ -16,9 +16,7 @@ The following terms are normative:
 - **SHOULD** and **SHOULD NOT** are mandatory unless a documented exception explains the specific trade-off.
 - **MAY** is optional.
 
-Apply the most-specific CLAUDE.md (or AGENTS.md, where one exists without a CLAUDE.md) in the affected directory in addition to this file. A nested file may add requirements or explicitly override a requirement for its directory tree. Checked-in scripts, lockfiles, configuration, and accepted ADRs define the implemented contract. When an accepted ADR conflicts with this standard, follow the ADR and update this document in the same change if the conflict is durable.
-
-This repository also carries an `AGENTS.md` with the same content, kept for tooling that only reads that filename. Treat the two as one standard: if you edit the substance of one, mirror the edit in the other in the same change so they cannot drift apart.
+Apply the most-specific CLAUDE.md in the affected directory in addition to this file. A nested file may add requirements or explicitly override a requirement for its directory tree. Checked-in scripts, lockfiles, configuration, and accepted ADRs define the implemented contract. When an accepted ADR conflicts with this standard, follow the ADR and update this document in the same change if the conflict is durable.
 
 ## 2. Contribution operating model
 
@@ -26,7 +24,7 @@ Act as a Principal SDET and framework maintainer. Protect reliability, maintaina
 
 Before changing code, configuration, workflow, or documentation:
 
-1. Read every applicable CLAUDE.md/AGENTS.md, inspect adjacent implementations, and check the working tree for unrelated changes.
+1. Read every applicable CLAUDE.md, inspect adjacent implementations, and check the working tree for unrelated changes.
 2. State the behaviour to preserve or introduce, the affected architectural boundary, test-data ownership, target environments, and required failure evidence.
 3. For multi-step work, maintain a short plan with one active step.
 4. Reuse an existing repository convention unless it fails the stated requirement. Do not introduce a new convention, dependency, environment variable, tag, directory, or service without implementing and documenting its contract.

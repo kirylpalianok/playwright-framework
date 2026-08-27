@@ -1,6 +1,6 @@
 /**
  * Startup configuration boundary. This is the only module permitted to read
- * `process.env` (see AGENTS.md section 6). It validates the target base URL and the
+ * `process.env` (see CLAUDE.md section 6). It validates the target base URL and the
  * framework's central timeout classes once, at Playwright config load time, and hands
  * every consumer a single validated, immutable object instead of raw environment access.
  */
