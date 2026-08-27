@@ -9,6 +9,7 @@ import { createRunId } from '../runtime/identifiers.js';
 import { createLogger, type Logger } from '../observability/logging/structured-logger.js';
 import { PracticeCatalogPage } from '../../ui/pages/practice-catalog.page.js';
 import { JavaScriptDelaysPage } from '../../ui/pages/javascript-delays.page.js';
+import { FormFieldsPage } from '../../ui/pages/form-fields.page.js';
 
 interface FrameworkWorkerFixtures {
   /** One identifier shared by every test this worker process runs. */
@@ -19,6 +20,7 @@ interface FrameworkTestFixtures {
   logger: Logger;
   catalogPage: PracticeCatalogPage;
   javascriptDelaysPage: JavaScriptDelaysPage;
+  formFieldsPage: FormFieldsPage;
 }
 
 /**
@@ -44,6 +46,10 @@ export const test = base.extend<FrameworkTestFixtures, FrameworkWorkerFixtures>(
 
   javascriptDelaysPage: async ({ page }, use) => {
     await use(new JavaScriptDelaysPage(page));
+  },
+
+  formFieldsPage: async ({ page }, use) => {
+    await use(new FormFieldsPage(page));
   },
 });
 
