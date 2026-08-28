@@ -1,6 +1,6 @@
 ---
 name: automation-review
-description: Review new or modified automation code in the practice-automation Playwright + TypeScript framework — UI tests, page objects, UI components, API tests, API clients, playwright.config.ts, fixtures, test-data builders, tsconfig.json, ESLint/Prettier config, and CI test workflows — against the conventions in CLAUDE.md and docs/architecture.md. Classifies every finding as BLOCKER, HIGH, MEDIUM, or LOW and never edits files. Trigger on "review this PR/diff/branch", "review my test/page object/fixture/API client/config", "check this against our conventions", or "automation code review".
+description: Review new or modified automation code in the practice-automation Playwright + TypeScript framework — UI tests, page objects, UI components, API tests, API clients, playwright.config.ts, fixtures, test-data builders, tsconfig.json, ESLint/Prettier config, and CI test workflows — against the conventions in CLAUDE.md and docs/architecture.md. Classifies every finding as BLOCKER, HIGH, MEDIUM, or LOW and never edits files. Trigger on "review this PR/diff/branch", "review my test/page object/fixture/API client/config", "check this against our conventions", or "automation code review". Also invoke it proactively, without being asked, after writing or modifying any of those files (a backlog story, bug fix, or refactor) and before reporting that work complete; a typecheck and a passing suite prove the code runs, not that it conforms.
 ---
 
 # Automation code review
