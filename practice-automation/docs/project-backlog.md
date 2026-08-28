@@ -78,9 +78,9 @@ Tagging convention: unless a story states otherwise, every UI specification carr
 
 - Objective: Establish a compact pattern for event-to-visible-result behavior.
 - Implementation Tasks:
-  - [ ] Implement `ClickEventsPage` with named animal-selection operations and result-state access.
-  - [ ] Add one specification that selects an animal and verifies its displayed result.
-  - [ ] Verify the selected control has a usable accessible name.
+  - [x] Implement `ClickEventsPage` with named animal-selection operations and result-state access.
+  - [x] Add one specification that selects an animal and verifies its displayed result.
+  - [x] Verify the selected control has a usable accessible name.
 - Acceptance Criteria: The test proves a user action causes the intended visible response.
 - Definition of Done: The specification runs independently and in parallel, uses no generic click abstraction, and produces normal Allure/failure evidence.
 - Dependencies: Story 1.
