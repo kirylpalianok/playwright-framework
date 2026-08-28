@@ -66,7 +66,7 @@ src/
   support/                     fixtures, builders, data lifecycle, assertions
   config/                      schema-validated environment configuration
 docs/                          ADRs and contributor/operational documentation
-.github/workflows/             CI/CD workflows
+.github/workflows/             CI/CD workflows (at the repository root, above this directory)
 ```
 
 | Layer | May depend on | MUST NOT depend on |
