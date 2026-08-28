@@ -10,14 +10,14 @@ Tagging convention: unless a story states otherwise, every UI specification carr
 
 - Objective: Establish the smallest end-to-end framework slice: validated configuration, one catalogue navigation test, one safe API discovery test, actionable reporting, and automated pull-request validation.
 - Implementation Tasks:
-  - [ ] Add one schema-validated startup configuration boundary for the target base URL and timeout classes.
-  - [ ] Update the configuration reference and safe environment template.
-  - [ ] Create test-scoped UI and API fixtures with a run identifier and sanitized structured logging.
-  - [ ] Implement `PracticeCatalogPage` only for opening the catalogue and following a named exercise link.
-  - [ ] Add one `@smoke @ui` specification for catalogue navigation to JavaScript Delays.
-  - [ ] Add one `@smoke @api` specification that validates the public REST discovery endpoint's status, relevant header, and small runtime schema.
-  - [ ] Apply the initial Allure suite hierarchy and labels to both specifications.
-  - [ ] Create a least-privilege GitHub Actions pull-request workflow that runs typecheck and the smoke suite and publishes safe failure evidence.
+  - [x] Add one schema-validated startup configuration boundary for the target base URL and timeout classes.
+  - [x] Update the configuration reference and safe environment template.
+  - [x] Create test-scoped UI and API fixtures with a run identifier and sanitized structured logging.
+  - [x] Implement `PracticeCatalogPage` only for opening the catalogue and following a named exercise link.
+  - [x] Add one `@smoke @ui` specification for catalogue navigation to JavaScript Delays.
+  - [x] Add one `@smoke @api` specification that validates the public REST discovery endpoint's status, relevant header, and small runtime schema.
+  - [x] Apply the initial Allure suite hierarchy and labels to both specifications.
+  - [x] Create a least-privilege GitHub Actions pull-request workflow that runs typecheck and the smoke suite and publishes safe failure evidence.
 - Acceptance Criteria: A configured local run and a pull request run execute one meaningful UI behavior and one meaningful HTTP contract check; each result is distinguishable in Allure.
 - Definition of Done: `npm run check` and the targeted smoke commands pass; configuration failure is safe and actionable; CI does not require credentials or mutable test data; no environment URL is embedded in test or framework source.
 - Dependencies: None.
@@ -30,10 +30,10 @@ Tagging convention: unless a story states otherwise, every UI specification carr
 
 - Objective: Prove the framework synchronizes on meaningful client-side state.
 - Implementation Tasks:
-  - [ ] Implement `JavaScriptDelaysPage` with a semantic start operation and liftoff state query.
-  - [ ] Add a regression specification that starts the countdown and verifies the visible Liftoff outcome.
-  - [ ] Add accessible role/name checks for the trigger and destination heading.
-  - [ ] Add meaningful Allure steps and safe diagnostic context for the countdown operation.
+  - [x] Implement `JavaScriptDelaysPage` with a semantic start operation and liftoff state query.
+  - [x] Add a regression specification that starts the countdown and verifies the visible Liftoff outcome.
+  - [x] Add accessible role/name checks for the trigger and destination heading.
+  - [x] Add meaningful Allure steps and safe diagnostic context for the countdown operation.
 - Acceptance Criteria: The test passes using Playwright auto-waiting and web-first assertions only.
 - Definition of Done: The test passes alone, in the smoke/regression selection, and in CI; no fixed delay, `networkidle`, force action, or per-test timeout increase is introduced.
 - Dependencies: Story 1.
@@ -46,11 +46,11 @@ Tagging convention: unless a story states otherwise, every UI specification carr
 
 - Objective: Support deterministic form interaction while avoiding public form side effects.
 - Implementation Tasks:
-  - [ ] Implement `FormFieldsPage` for semantic form interaction and selected-value queries.
-  - [ ] Add a synthetic form-value builder with explicit safe overrides.
-  - [ ] Add coverage for required text input, password, checkbox group, radio group, select, email, and message state.
-  - [ ] Add accessible label, required-state, and keyboard interaction checks for supported controls.
-  - [ ] Tag the specifications as `@ui @regression` and preserve existing reporting conventions.
+  - [x] Implement `FormFieldsPage` for semantic form interaction and selected-value queries.
+  - [x] Add a synthetic form-value builder with explicit safe overrides.
+  - [x] Add coverage for required text input, password, checkbox group, radio group, select, email, and message state.
+  - [x] Add accessible label, required-state, and keyboard interaction checks for supported controls.
+  - [x] Tag the specifications as `@ui @regression` and preserve existing reporting conventions.
 - Acceptance Criteria: Tests prove control state and validation behavior without sending a contact, comment, or email-producing form.
 - Definition of Done: Tests pass alone and in parallel; all input is synthetic and non-PII; no cleanup is necessary because no remote data is created.
 - Dependencies: Story 1.
