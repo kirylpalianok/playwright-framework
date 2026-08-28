@@ -56,3 +56,19 @@ jobs:
           name: allure-results
           path: allure-results/
           retention-days: 7
+
+      # Runs after a failed suite as well, because that is when the report matters most.
+      # Guarded on results actually existing so an earlier setup failure surfaces as its
+      # own error rather than as a confusing "allure generate" failure. This step cannot
+      # mask a failing suite: the smoke step's failure has already failed the job.
+      - name: Generate Allure report
+        if: ${{ !cancelled() && hashFiles('allure-results/**') != '' }}
+        run: npm run report:generate
+
+      - name: Upload Allure report
+        if: ${{ !cancelled() && hashFiles('allure-report/**') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report/
+          retention-days: 7
