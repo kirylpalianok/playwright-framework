@@ -61,11 +61,11 @@ Tagging convention: unless a story states otherwise, every UI specification carr
 
 - Objective: Make repeatable read-only API checks available to future UI-plus-network tests.
 - Implementation Tasks:
-  - [ ] Add a typed, fixture-constructed capability for public GET and HEAD requests.
-  - [ ] Centralize base URL, correlation data, timeout, and sanitized request/response logging at construction.
-  - [ ] Add runtime validation helpers for JSON response boundaries.
-  - [ ] Refactor the API smoke test from Story 1 to use the new capability.
-  - [ ] Add one read-only API regression check with status, relevant headers, schema, and observable purpose.
+  - [x] Add a typed, fixture-constructed capability for public GET and HEAD requests.
+  - [x] Centralize base URL, correlation data, timeout, and sanitized request/response logging at construction.
+  - [x] Add runtime validation helpers for JSON response boundaries.
+  - [x] Refactor the API smoke test from Story 1 to use the new capability.
+  - [x] Add one read-only API regression check with status, relevant headers, schema, and observable purpose.
 - Acceptance Criteria: API tests can make safe read requests with consistent diagnostics and no direct environment access outside validated configuration.
 - Definition of Done: Existing API smoke coverage still passes; malformed JSON or unexpected status produces actionable, sanitized evidence; no catch-all API client or mutation method is added.
 - Dependencies: Story 1.
