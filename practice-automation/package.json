@@ -7,16 +7,19 @@
   "scripts": {
     "check": "npm run typecheck && npm run test:list",
     "typecheck": "tsc --noEmit",
-    "test": "playwright test",
+    "test": "npm run report:clean && playwright test",
     "test:list": "playwright test --list --pass-with-no-tests",
-    "test:ui": "playwright test --grep @ui",
-    "test:api": "playwright test --grep @api",
-    "test:smoke": "playwright test --grep @smoke",
-    "report:open": "allure open allure-report"
+    "test:ui": "npm run report:clean && playwright test --grep @ui",
+    "test:api": "npm run report:clean && playwright test --grep @api",
+    "test:smoke": "npm run report:clean && playwright test --grep @smoke",
+    "report:clean": "node --eval \"const fs = require('fs'); for (const dir of ['allure-results', 'allure-report']) fs.rmSync(dir, { recursive: true, force: true });\"",
+    "report:generate": "allure generate allure-results --output allure-report",
+    "report:open": "npm run report:generate && allure open allure-report"
   },
   "devDependencies": {
     "@playwright/test": "1.61.1",
     "@types/node": "24.3.0",
+    "allure": "3.16.0",
     "allure-js-commons": "3.3.0",
     "allure-playwright": "3.3.0",
     "typescript": "5.9.2"

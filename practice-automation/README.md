@@ -28,6 +28,7 @@ npm test
 npm run test:ui
 npm run test:api
 npm run test:smoke
+npm run report:open
 ```
 
 ## First run
@@ -36,3 +37,16 @@ After setup, run `npm run check` to typecheck and list the suite, then `npm run
 test:smoke` to run the smoke tests. This exercises one UI behavior (opening the
 JavaScript Delays exercise from the practice catalogue) and one API contract (the
 WordPress REST discovery endpoint at `/wp-json/`) against the live public target.
+
+## Reports
+
+Every test command writes Playwright's own HTML report to `playwright-report/` and
+Allure results to `allure-results/`. `npm run report:open` builds `allure-report/`
+from those results and serves it; `npm run report:generate` builds it without
+serving. Both use the bundled Allure CLI, so no separate installation and no Java
+runtime is required.
+
+Each test command clears `allure-results/` and `allure-report/` before it runs, so a
+report always describes the run that produced it rather than accumulating earlier
+sessions. Running two selections in sequence therefore reports only the second one;
+use `npm test` when you need a single report covering the whole suite.
