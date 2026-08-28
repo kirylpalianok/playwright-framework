@@ -50,6 +50,7 @@ src/
 │   └── components/         independently meaningful or reused UI regions
 └── api/
     ├── clients/            typed service clients for proven API consumers
+    ├── requests/           the read-only GET/HEAD transport capability
     └── schemas/            response/request runtime schemas
 
 tests/
@@ -173,9 +174,10 @@ Create a component only when a region is independently meaningful or demonstrabl
 
 The API layer has two responsibilities: construct safe typed requests and validate untrusted responses.
 
-- `src/api/clients/` contains named service clients only for stable behaviors with a credible consumer. A client owns request construction, safe defaults, correlation identifiers, response status handling, and mapping to a validated result.
-- `src/api/schemas/` contains explicit DTO/runtime schemas for request and response boundaries. Compile-time types alone do not validate server data.
-- `src/core/fixtures/` constructs API request contexts and injects configuration; API modules do not read process environment or choose target environments.
+- `src/api/requests/` contains the framework's only HTTP request capability: safe `GET` and `HEAD` requests over site-relative paths, with sanitized request/response logging and JSON access gated behind a schema validator. It has no mutation method and no arbitrary-verb escape hatch (see [ADR 0002](adr/0002-read-only-http-request-capability.md)).
+- `src/api/clients/` contains named service clients only for stable behaviors with a credible consumer. A client owns request construction, safe defaults, correlation identifiers, response status handling, and mapping to a validated result. None exists yet, by design.
+- `src/api/schemas/` contains explicit DTO/runtime schemas for request and response boundaries. Compile-time types alone do not validate server data. Schemas compose the shared JSON boundary helpers in `src/core/validation/`.
+- `src/core/fixtures/` constructs API request contexts and injects configuration — base URL, the API timeout class, and the run/test correlation header are applied once, at construction, and the context is disposed with the test. API modules do not read process environment or choose target environments.
 - `tests/api/` verifies status, relevant headers, runtime schema, and business or published contract outcome.
 - Mutation endpoints require an explicit data owner, collision-resistant identity, idempotent cleanup, and environment safety. Do not add them merely to make UI setup convenient.
 

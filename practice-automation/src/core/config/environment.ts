@@ -14,6 +14,8 @@ export interface TimeoutsConfig {
   readonly expectationMs: number;
   /** Maximum time for one test, including hooks. */
   readonly testMs: number;
+  /** Maximum time for a single API request made through the read-only HTTP capability. */
+  readonly apiRequestMs: number;
 }
 
 export interface EnvironmentConfig {
@@ -24,11 +26,17 @@ export interface EnvironmentConfig {
 
 const DEFAULT_BASE_URL = 'https://practice-automation.com';
 
-const DEFAULT_TIMEOUTS: TimeoutsConfig = {
+/**
+ * The framework's timeout classes when nothing is configured. Exported so fixtures can
+ * declare the same default for the Playwright option that carries the API timeout into
+ * the test scope, rather than repeating the number.
+ */
+export const DEFAULT_TIMEOUTS: TimeoutsConfig = {
   actionMs: 10_000,
   navigationMs: 15_000,
   expectationMs: 5_000,
   testMs: 30_000,
+  apiRequestMs: 15_000,
 };
 
 function readBaseUrl(env: NodeJS.ProcessEnv): string {
@@ -78,6 +86,7 @@ export function loadEnvironmentConfig(env: NodeJS.ProcessEnv = process.env): Env
     navigationMs: readPositiveIntegerMs(env, 'NAVIGATION_TIMEOUT_MS', DEFAULT_TIMEOUTS.navigationMs),
     expectationMs: readPositiveIntegerMs(env, 'EXPECT_TIMEOUT_MS', DEFAULT_TIMEOUTS.expectationMs),
     testMs: readPositiveIntegerMs(env, 'TEST_TIMEOUT_MS', DEFAULT_TIMEOUTS.testMs),
+    apiRequestMs: readPositiveIntegerMs(env, 'API_TIMEOUT_MS', DEFAULT_TIMEOUTS.apiRequestMs),
   };
 
   return { baseUrl, timeouts };
