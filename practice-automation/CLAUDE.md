@@ -66,7 +66,7 @@ src/
   support/                     fixtures, builders, data lifecycle, assertions
   config/                      schema-validated environment configuration
 docs/                          ADRs and contributor/operational documentation
-.github/workflows/             CI/CD workflows
+.github/workflows/             CI/CD workflows (at the repository root, above this directory)
 ```
 
 | Layer | May depend on | MUST NOT depend on |
@@ -243,14 +243,20 @@ Claude Code (and any other AI agent working in this repository) MUST:
 Common commands (see `package.json` for the source of truth):
 
 ```
-npm run check       # typecheck + list tests (no execution) — cheapest pre-flight check
-npm run typecheck   # tsc --noEmit
-npm run test        # run the full Playwright suite
-npm run test:smoke  # run tests tagged @smoke
-npm run test:ui     # run tests tagged @ui
-npm run test:api    # run tests tagged @api
-npm run report:open # open the last Allure report
+npm run check           # typecheck + list tests (no execution) — cheapest pre-flight check
+npm run typecheck       # tsc --noEmit
+npm run test            # run the full Playwright suite
+npm run test:smoke      # run tests tagged @smoke
+npm run test:ui         # run tests tagged @ui
+npm run test:api        # run tests tagged @api
+npm run report:generate # build allure-report/ from allure-results/
+npm run report:open     # build the Allure report and serve it
+npm run report:clean    # remove allure-results/ and allure-report/
 ```
+
+Every `test*` command clears the Allure results and report first, so a report always
+describes the run that produced it. The Allure CLI is a dev dependency and requires no
+Java runtime.
 
 Current top-level layout (see Section 4 for the target/stable architecture these directories must respect):
 

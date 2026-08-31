@@ -70,7 +70,7 @@ docs/
 Additional repository boundaries are also intentional:
 
 - `playwright.config.ts` defines runner projects and execution defaults. It should remain a composition/configuration entry point, not a business workflow module.
-- `.github/workflows/` owns CI orchestration, permissions, artifact handling, and suite selection.
+- `.github/workflows/` owns CI orchestration, permissions, artifact handling, and suite selection. It lives at the **repository root**, one level above this project directory, because GitHub Actions only reads workflows from there. Its `run` steps declare `working-directory: practice-automation`, while `uses:` steps resolve paths from the workspace root and carry that prefix explicitly.
 - `docs/adr/` is required when a change alters dependency direction, data lifecycle, environment safety, reporting semantics, retries, or CI strategy.
 - `package.json` is the source of supported local commands. Do not add ad hoc commands that bypass the configured runner or evidence pipeline.
 
