@@ -91,9 +91,9 @@ Tagging convention: unless a story states otherwise, every UI specification carr
 
 - Objective: Cover an expandable interaction and its accessibility contract.
 - Implementation Tasks:
-  - [ ] Implement `AccordionPage` with expand and panel-state operations.
-  - [ ] Add a specification for expanding the accordion and observing its content.
-  - [ ] Add keyboard operation and accessible role/name/state checks where exposed by the target.
+  - [x] Implement `AccordionPage` with expand and panel-state operations.
+  - [x] Add a specification for expanding the accordion and observing its content.
+  - [x] Add keyboard operation and accessible role/name/state checks where exposed by the target.
 - Acceptance Criteria: The expanded content and accessible state agree after the user interaction.
 - Definition of Done: The test is independent, uses semantic locators, and does not rely on styling classes or DOM traversal.
 - Dependencies: Story 1.
