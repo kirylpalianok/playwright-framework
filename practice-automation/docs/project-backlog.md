@@ -119,10 +119,10 @@ Tagging convention: unless a story states otherwise, every UI specification carr
 
 - Objective: Exercise browser page lifecycle events as observable user behavior.
 - Implementation Tasks:
-  - [ ] Implement `WindowOperationsPage` with triggers for new tab, new window, and replacement navigation.
-  - [ ] Add a new-page test that registers the popup wait before clicking and verifies a meaningful destination.
-  - [ ] Add a replacement-navigation test that verifies the original page's resulting URL/title/state.
-  - [ ] Add accessible-name checks for the navigation triggers.
+  - [x] Implement `WindowOperationsPage` with triggers for new tab, new window, and replacement navigation.
+  - [x] Add a new-page test that registers the popup wait before clicking and verifies a meaningful destination.
+  - [x] Add a replacement-navigation test that verifies the original page's resulting URL/title/state.
+  - [x] Add accessible-name checks for the navigation triggers.
 - Acceptance Criteria: Tests prove the intended destination behavior rather than merely detecting a new `Page` object.
 - Definition of Done: Tests run with isolated browser contexts and leave no open-page state shared with later tests.
 - Dependencies: Story 1.

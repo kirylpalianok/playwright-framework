@@ -19,6 +19,7 @@ import { FormFieldsPage } from '../../ui/pages/form-fields.page.js';
 import { ClickEventsPage } from '../../ui/pages/click-events.page.js';
 import { AccordionPage } from '../../ui/pages/accordion.page.js';
 import { PopupsPage } from '../../ui/pages/popups.page.js';
+import { WindowOperationsPage } from '../../ui/pages/window-operations.page.js';
 
 interface FrameworkWorkerFixtures {
   /** One identifier shared by every test this worker process runs. */
@@ -40,6 +41,7 @@ interface FrameworkTestFixtures {
   clickEventsPage: ClickEventsPage;
   accordionPage: AccordionPage;
   popupsPage: PopupsPage;
+  windowOperationsPage: WindowOperationsPage;
 }
 
 /**
@@ -117,6 +119,10 @@ export const test = base.extend<FrameworkTestFixtures & FrameworkTestOptions, Fr
 
   popupsPage: async ({ page }, use) => {
     await use(new PopupsPage(page));
+  },
+
+  windowOperationsPage: async ({ page }, use) => {
+    await use(new WindowOperationsPage(page));
   },
 });
 
