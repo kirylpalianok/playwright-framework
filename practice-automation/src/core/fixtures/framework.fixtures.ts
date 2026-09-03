@@ -18,6 +18,7 @@ import { JavaScriptDelaysPage } from '../../ui/pages/javascript-delays.page.js';
 import { FormFieldsPage } from '../../ui/pages/form-fields.page.js';
 import { ClickEventsPage } from '../../ui/pages/click-events.page.js';
 import { AccordionPage } from '../../ui/pages/accordion.page.js';
+import { PopupsPage } from '../../ui/pages/popups.page.js';
 
 interface FrameworkWorkerFixtures {
   /** One identifier shared by every test this worker process runs. */
@@ -38,6 +39,7 @@ interface FrameworkTestFixtures {
   formFieldsPage: FormFieldsPage;
   clickEventsPage: ClickEventsPage;
   accordionPage: AccordionPage;
+  popupsPage: PopupsPage;
 }
 
 /**
@@ -111,6 +113,10 @@ export const test = base.extend<FrameworkTestFixtures & FrameworkTestOptions, Fr
 
   accordionPage: async ({ page }, use) => {
     await use(new AccordionPage(page));
+  },
+
+  popupsPage: async ({ page }, use) => {
+    await use(new PopupsPage(page));
   },
 });
 
