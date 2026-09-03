@@ -20,6 +20,7 @@ import { ClickEventsPage } from '../../ui/pages/click-events.page.js';
 import { AccordionPage } from '../../ui/pages/accordion.page.js';
 import { PopupsPage } from '../../ui/pages/popups.page.js';
 import { WindowOperationsPage } from '../../ui/pages/window-operations.page.js';
+import { ModalsPage } from '../../ui/pages/modals.page.js';
 
 interface FrameworkWorkerFixtures {
   /** One identifier shared by every test this worker process runs. */
@@ -42,6 +43,7 @@ interface FrameworkTestFixtures {
   accordionPage: AccordionPage;
   popupsPage: PopupsPage;
   windowOperationsPage: WindowOperationsPage;
+  modalsPage: ModalsPage;
 }
 
 /**
@@ -123,6 +125,10 @@ export const test = base.extend<FrameworkTestFixtures & FrameworkTestOptions, Fr
 
   windowOperationsPage: async ({ page }, use) => {
     await use(new WindowOperationsPage(page));
+  },
+
+  modalsPage: async ({ page }, use) => {
+    await use(new ModalsPage(page));
   },
 });
 
