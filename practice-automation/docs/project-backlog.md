@@ -133,9 +133,9 @@ Tagging convention: unless a story states otherwise, every UI specification carr
 
 - Objective: Cover reusable overlay behavior without creating a speculative component library.
 - Implementation Tasks:
-  - [ ] Add a modal specification for visible state, accessible dialog name, and close behavior.
-  - [ ] Add focus behavior checks where the target implementation supports them.
-  - [ ] Extract `ModalDialog` only if at least two modal scenarios require the same stable mechanics.
+  - [x] Add a modal specification for visible state, accessible dialog name, and close behavior.
+  - [x] Add focus behavior checks where the target implementation supports them.
+  - [x] Extract `ModalDialog` only if at least two modal scenarios require the same stable mechanics.
 - Acceptance Criteria: A user can open and close the modal, and the dialog is observable through an accessible contract.
 - Definition of Done: The test does not submit the global modal form; any extracted component has at least two demonstrated consumers.
 - Dependencies: Story 7.
