@@ -106,9 +106,9 @@ Tagging convention: unless a story states otherwise, every UI specification carr
 
 - Objective: Cover alert, confirm, and prompt behavior through Playwright's dialog boundary.
 - Implementation Tasks:
-  - [ ] Implement `PopupsPage` with semantic triggers for alert, confirm, and prompt scenarios.
-  - [ ] Add one focused specification for each dialog type, registering the handler before the trigger.
-  - [ ] Assert the user-visible consequence for confirm and prompt outcomes where the page exposes one.
+  - [x] Implement `PopupsPage` with semantic triggers for alert, confirm, and prompt scenarios.
+  - [x] Add one focused specification for each dialog type, registering the handler before the trigger.
+  - [x] Assert the user-visible consequence for confirm and prompt outcomes where the page exposes one.
 - Acceptance Criteria: Dialog acceptance/dismissal and prompt input are deterministic and do not leak handlers between tests.
 - Definition of Done: All dialog tests pass in isolation and parallel execution; traces identify dialog type and chosen outcome.
 - Dependencies: Story 1.
